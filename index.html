@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <style type="text/css">
+        body {
+            background-color: rgb(120, 196, 240);
+        }
+        .heading, .sub-heading {
+            text-align: center;
+        }
+
+        .container {
+            border: 2px solid red;
+            border-radius: 15px;
+            margin: auto;
+            padding: 10px;
+            background-color: rgb(204, 216, 171);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 700px;
+            height: 600px;
+            text-align: center;
+            display: flex;
+            gap: 2px;
+        }
+
+        button {
+            color: rgb(248, 244, 244);
+            background-color: rgb(245, 19, 19);
+            border: none;
+            border-radius: 5px;
+            width: 30%;
+            height: 2rem;
+        }
+
+        button:hover {
+            color: rgb(4, 75, 54);
+        }
+
+        input[type=number] {
+            width: 170px;
+        }
+
+        .formstyle {
+            border-bottom: 1px solid #efefef;
+            margin: 10px;
+            padding-bottom: 10px;
+            width: 260px;}
+        label {
+            float: none;
+        }
+        .results {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border: 2px solid lightseagreen;
+            border-radius: 5px;
+            background-color:burlywood;
+            flex: 50%;
+        }
+        #grade {
+            border: 1px solid rgb(26, 24, 24);
+            border-radius: 5px;
+            color: red;
+            background-color: rgb(217, 246, 247);
+        }
+        form{
+            border: 2px solid lightseagreen;
+            border-radius: 5px;
+            background-color:burlywood;
+            flex:50%
+        }
+        @media (max-width:375px) {
+            .container{
+                display:flex;
+                flex-direction:column;
+                overflow-x: hidden;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Percentage Calculator</h1>
+    <h4 class="sub-heading">This Program takes marks of different subjects as input from user, calculates the<br>
+            Percentage and prints the result on the screen. </h4>
+    <div class="container">
+            <form onsubmit="calculate(); return false;">
+
+                <div class="formstyle">
+                    <label for="physics">Marks obtained in Physics</label>
+                    <input type="number" min="0" max="100" required id="physics" placeholder="Marks obtained in physics">
+                    <br><br>
+                </div>
+                <div class="formstyle">
+                    <label for="chemistry">Marks obtained in Chemistry</label>
+                    <input type="number" min="0" max="100" required id="chemistry"
+                        placeholder="Marks obtained in Chemistry">
+                    <br><br>
+                </div>
+                <div class="formstyle">
+                <label for="mathematics">Marks obtained in Mathematics</label>
+                <input type="number" min="0" max="100" required id="mathematics"
+                    placeholder="Marks obtained in Mathematics">
+                <br><br>
+                </div>
+                <div class="formstyle">
+                <label for="urdu">Marks obtained in urdu</label>
+                <input type="number" min="0" max="100" required id="urdu" 
+                    placeholder="Marks obtained in urdu">
+                <br><br>
+                </div>
+                <div class="formstyle">
+                <label for="english">Marks obtained in English</label>
+                <input type="number" min="0" max="100" required id="english" 
+                    placeholder="Marks obtained in English">
+                <br><br>
+                </div>
+                <div class="formstyle">
+                <label for="ist">Marks obtained in Islamic Studies</label>
+                <input type="number" min="0" max="50" required id="ist" 
+                    placeholder="Marks obtained in islamic Studies">
+                <br><br>
+                </div>
+
+                <button type="submit">Calculate</button>
+
+            </form>
+            <div class="results">
+                <h1>Result</h1>
+                <h2 id="marksobtained"></h2>
+                <h2 id="totalmarks"></h2>
+                <h2 id="percentage"></h2>
+                <h1 id="grade"></h1>
+
+
+                <script>
+                    function calculate() {
+                        let physics = parseFloat(document.querySelector("#physics").value);
+                        let chemistry = parseFloat(document.querySelector("#chemistry").value);
+                        let mathematics = parseFloat(document.querySelector("#mathematics").value);
+                        let english = parseFloat(document.querySelector("#urdu").value);
+                        let urdu = parseFloat(document.querySelector("#english").value);
+                        let ist = parseFloat(document.querySelector("#ist").value);
+
+
+                        // number01 = parseFloat(number01);
+
+                        let sum = (physics + chemistry + mathematics + urdu + english + ist);
+
+                        let percentage = (sum / 550) * 100;
+
+                        document.querySelector("#marksobtained").innerHTML = `The obtained marks are ${sum}`;
+                        document.querySelector("#totalmarks").innerHTML = `The total marks are 550`;
+                        document.querySelector("#percentage").innerHTML = `The Percentage is ${percentage.toFixed(2)} %`;
+
+                        if (percentage >= 80) {
+                            document.querySelector("#grade").innerHTML = `You have got A1 Grade`;
+                        } else if (percentage >= 70 && percentage < 80) {
+                            document.querySelector("#grade").innerHTML = `You have got A Grade`;
+                        } else if (percentage >= 60 && percentage < 70) {
+                            document.querySelector("#grade").innerHTML = `You have got B Grade`;
+                        } else if (percentage >= 50 && percentage < 60) {
+                            document.querySelector("#grade").innerHTML = `You have got C Grade`;
+                        } else if (percentage >= 40 && percentage < 50) {
+                            document.querySelector("#grade").innerHTML = `You have got D Grade`;
+                        } else {
+                            document.querySelector("#grade").innerHTML = `oops, you are Fail`;
+                        }
+
+
+                    }
+                </script>
+            </div>
+
+    </div>
+
+</body>
+
+</html>
