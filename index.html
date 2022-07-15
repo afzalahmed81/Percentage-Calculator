@@ -22,7 +22,7 @@
             background-color: rgb(204, 216, 171);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             width: 700px;
-            height: 600px;
+            height: 500px;
             text-align: center;
             display: flex;
             gap: 2px;
@@ -35,6 +35,7 @@
             border-radius: 5px;
             width: 30%;
             height: 2rem;
+            margin-top: 20px;
         }
 
         button:hover {
@@ -67,6 +68,9 @@
             border-radius: 5px;
             color: red;
             background-color: rgb(217, 246, 247);
+            width: 90%;
+            margin: auto;
+            padding: 5px;
         }
         form{
             border: 2px solid lightseagreen;
@@ -95,37 +99,37 @@
                 <div class="formstyle">
                     <label for="physics">Marks obtained in Physics</label>
                     <input type="number" min="0" max="100" required id="physics" placeholder="Marks obtained in physics">
-                    <br><br>
+                    
                 </div>
                 <div class="formstyle">
                     <label for="chemistry">Marks obtained in Chemistry</label>
                     <input type="number" min="0" max="100" required id="chemistry"
                         placeholder="Marks obtained in Chemistry">
-                    <br><br>
+                    
                 </div>
                 <div class="formstyle">
                 <label for="mathematics">Marks obtained in Mathematics</label>
                 <input type="number" min="0" max="100" required id="mathematics"
                     placeholder="Marks obtained in Mathematics">
-                <br><br>
+                
                 </div>
                 <div class="formstyle">
                 <label for="urdu">Marks obtained in urdu</label>
                 <input type="number" min="0" max="100" required id="urdu" 
                     placeholder="Marks obtained in urdu">
-                <br><br>
+                
                 </div>
                 <div class="formstyle">
                 <label for="english">Marks obtained in English</label>
                 <input type="number" min="0" max="100" required id="english" 
                     placeholder="Marks obtained in English">
-                <br><br>
+                
                 </div>
                 <div class="formstyle">
                 <label for="ist">Marks obtained in Islamic Studies</label>
                 <input type="number" min="0" max="50" required id="ist" 
                     placeholder="Marks obtained in islamic Studies">
-                <br><br>
+                
                 </div>
 
                 <button type="submit">Calculate</button>
@@ -136,7 +140,7 @@
                 <h2 id="marksobtained"></h2>
                 <h2 id="totalmarks"></h2>
                 <h2 id="percentage"></h2>
-                <h1 id="grade"></h1>
+                <h2 id="grade"></h2>
 
 
                 <script>
